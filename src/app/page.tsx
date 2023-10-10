@@ -1,26 +1,29 @@
 "use client";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import AnimatedCard from "./components/AnimatedCard";
+import AnimatedClassCard from "./components/AnimatedClassCard";
 
 export default function Home() {
     const cardData = [
-        { grade: "1st", imageUrl: "/1st.jpg" },
-        { grade: "2nd", imageUrl: "/2nd.jpg" },
-        { grade: "3rd", imageUrl: "/3rd.jpg" },
-        { grade: "4th", imageUrl: "/4th.png" },
-        { grade: "5th", imageUrl: "/5th.png" },
-        { grade: "6th", imageUrl: "/6th.jpg" },
+        { grade: "الاولى", imageUrl: "/1st.jpg", url: "1st" },
+        { grade: "الثانية", imageUrl: "/2nd.jpg", url: "1st" },
+        { grade: "الثالثة", imageUrl: "/3rd.jpg", url: "1st" },
+        { grade: "الرابعة", imageUrl: "/4th.png", url: "1st" },
+        { grade: "الخامسة", imageUrl: "/5th.png", url: "1st" },
+        { grade: "السادسة", imageUrl: "/6th.jpg", url: "1st" },
     ];
     return (
         <div>
             <Header />
-            <div className="flex flex-wrap -m-4" id="content">
+            <div
+                className="flex items-center justify-around flex-wrap m-2"
+                id="content"
+            >
                 {cardData.map((card, index) => (
-                    <AnimatedCard
-                        key={index}
+                    <AnimatedClassCard
                         grade={card.grade}
                         imageUrl={card.imageUrl}
+                        key={index}
                     />
                 ))}
             </div>
