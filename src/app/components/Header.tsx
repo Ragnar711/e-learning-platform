@@ -126,12 +126,12 @@ export default function Header() {
                         </p>
                         <div className="mt-10 flex items-center justify-center gap-x-6">
                             <a
-                                href="#content"
+                                href="#content1"
                                 className="rounded-md bg-indigo-900 px-20 py-6 text-xl font-semibold text-white shadow-sm hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                                 onClick={(e) => {
                                     e.preventDefault();
                                     const contentElement =
-                                        document.getElementById("content");
+                                        document.getElementById("content1");
                                     if (contentElement) {
                                         contentElement.scrollIntoView({
                                             behavior: "smooth",
