@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-const AnimatedClassCard = ({
-    grade,
-    imageUrl,
-}: {
+interface AnimatedClassCardProps {
     grade: string;
     imageUrl: string;
+    onClick: () => void;
+}
+
+const AnimatedClassCard: React.FC<AnimatedClassCardProps> = ({
+    grade,
+    imageUrl,
+    onClick,
 }) => {
     const [isHovered, setIsHovered] = useState(false);
 
@@ -33,6 +37,7 @@ const AnimatedClassCard = ({
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             style={cardStyle}
+            onClick={onClick}
         >
             <div
                 className="bg-white shadow-lg rounded-lg overflow-hidden"
