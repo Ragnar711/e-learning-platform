@@ -3,8 +3,8 @@ import Image from "next/image";
 
 interface AnimatedClassCardProps {
     grade: string;
-    imageUrl: string;
-    onClick: () => void;
+    imageUrl?: string;
+    onClick?: () => void;
 }
 
 const AnimatedClassCard: React.FC<AnimatedClassCardProps> = ({
@@ -44,14 +44,14 @@ const AnimatedClassCard: React.FC<AnimatedClassCardProps> = ({
                 style={contentStyle}
             >
                 <Image
-                    src={imageUrl}
+                    src={imageUrl ?? ""}
                     alt={`Grade ${grade} Image`}
                     width={200}
                     height={100}
                     className="object-cover mx-auto"
                 />
                 <div className="p-4">
-                    <p className="text-lg font-semibold">السنة {grade}</p>
+                    <p className="text-lg font-semibold">{grade}</p>
                     <p className="text-sm">منصة التعلم الإلكتروني</p>
                 </div>
             </div>
